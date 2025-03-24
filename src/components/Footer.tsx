@@ -15,6 +15,7 @@ const Footer = () => {
               backgroundSize: "300% 100%",
               backgroundClip: "text",
               WebkitBackgroundClip: "text",
+              animation: "gradient-shift 5s ease infinite" 
             }} 
           />
           <p className="text-sm font-medium">Mindigenous</p>
