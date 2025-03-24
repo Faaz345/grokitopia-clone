@@ -30,7 +30,7 @@ const Header = () => {
           <div className="relative w-8 h-8 flex items-center justify-center">
             <Brain 
               size={28} 
-              className="animate-breathe text-transparent absolute" 
+              className="text-transparent" 
               style={{ 
                 backgroundImage: "linear-gradient(90deg, #ff6b9d, #8b5cf6, #3b82f6)", 
                 backgroundSize: "300% 100%",
