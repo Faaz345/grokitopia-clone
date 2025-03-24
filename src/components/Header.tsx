@@ -1,7 +1,7 @@
-
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { Brain } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,7 +26,7 @@ const Header = () => {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="flex items-center space-x-2">
+        <Link to="/" className="flex items-center space-x-2">
           <div className="relative w-8 h-8 flex items-center justify-center">
             <Brain 
               size={28} 
@@ -41,12 +41,27 @@ const Header = () => {
             />
           </div>
           <h1 className="text-xl font-medium">Mindigenous</h1>
-        </div>
+        </Link>
         
         <nav className="hidden md:flex items-center space-x-6">
-          <a href="#" className="opacity-70 hover:opacity-100 transition-opacity">Home</a>
-          <a href="#" className="opacity-70 hover:opacity-100 transition-opacity">Features</a>
-          <a href="#" className="opacity-70 hover:opacity-100 transition-opacity">About</a>
+          <Link 
+            to="/" 
+            className="opacity-70 hover:opacity-100 transition-opacity"
+          >
+            Home
+          </Link>
+          <Link 
+            to="/features" 
+            className="opacity-70 hover:opacity-100 transition-opacity"
+          >
+            Features
+          </Link>
+          <Link 
+            to="/about" 
+            className="opacity-70 hover:opacity-100 transition-opacity"
+          >
+            About
+          </Link>
         </nav>
       </div>
     </header>
