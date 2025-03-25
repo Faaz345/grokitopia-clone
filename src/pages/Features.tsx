@@ -58,7 +58,7 @@ const Features = () => {
             Powerful Features for Your Journey
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
-            Discover how Mindigenous can help you achieve personal growth and mental wellness with our comprehensive set of features.
+            Discover how <span className="font-briller">MINDIGENOUS</span> can help you achieve personal growth and mental wellness with our comprehensive set of features.
           </p>
         </div>
       </section>
@@ -81,7 +81,7 @@ const Features = () => {
             Ready to Experience These Features?
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-            Join Mindigenous today and start your journey towards better mental wellness.
+            Join <span className="font-briller">MINDIGENOUS</span> today and start your journey towards better mental wellness.
           </p>
           <Link to="/chat">
             <Button size="lg" className="w-full sm:w-auto">

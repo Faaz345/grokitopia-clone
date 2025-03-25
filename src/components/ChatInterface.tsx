@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from "react";
 import { ChatMessage, Message, MessageRole } from "./ChatMessage";
 import { cn } from "@/lib/utils";
@@ -9,7 +8,7 @@ const sampleMessages: Message[] = [
   {
     id: "1",
     role: "assistant",
-    content: "Hello! I'm Grok, an AI assistant designed to help with your questions. How can I assist you today?",
+    content: "Hello! I'm MINDIGENOUS, an AI assistant designed to help with your questions. How can I assist you today?",
     timestamp: new Date(),
   },
 ];
@@ -139,7 +138,7 @@ const ChatInterface = () => {
                     handleSubmit(e);
                   }
                 }}
-                placeholder="Message Grok..."
+                placeholder="Message MINDIGENOUS..."
                 className="w-full py-2.5 px-4 bg-transparent text-foreground placeholder:text-muted-foreground resize-none outline-none min-h-[44px] max-h-[200px] overflow-y-auto"
                 rows={1}
               />
@@ -185,7 +184,7 @@ function generateResponse(input: string): string {
   }
   
   if (input.toLowerCase().includes("who are you") || input.toLowerCase().includes("what are you")) {
-    return "I'm a clone of Grok, an AI assistant designed to be helpful, harmless, and honest. I'm here to assist with a wide range of questions and tasks. How can I help you today?";
+    return "I'm MINDIGENOUS, an AI assistant designed to be helpful, harmless, and honest. I'm here to assist with a wide range of questions and tasks. How can I help you today?";
   }
   
   if (input.toLowerCase().includes("thank")) {

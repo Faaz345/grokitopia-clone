@@ -1,34 +1,40 @@
-
 import { cn } from "@/lib/utils";
-import { Brain } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const location = useLocation();
+  const path = location.pathname.slice(1);
+  const isDarkTextPage = path === 'features' || path === 'about';
+
   return (
-    <footer className="py-6 px-6 border-t border-border/40">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <div className="flex items-center space-x-2">
-          <Brain 
-            size={20} 
-            className="text-transparent" 
-            style={{ 
-              backgroundImage: "linear-gradient(90deg, #ff6b9d, #8b5cf6, #3b82f6)", 
-              backgroundSize: "300% 100%",
-              backgroundClip: "text",
-              WebkitBackgroundClip: "text",
-              animation: "gradient-shift 5s ease infinite" 
-            }} 
-          />
-          <p className="text-sm font-medium">Mindigenous</p>
-        </div>
-        
-        <p className="text-sm text-muted-foreground">
-          This is a beautiful design inspired by minimalist UI principles
-        </p>
-        
-        <div className="flex items-center space-x-6">
-          <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Privacy</a>
-          <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Terms</a>
-          <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</a>
+    <footer className="py-8 bg-transparent">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="mb-4 md:mb-0">
+            <p className={cn("text-sm", 
+              isDarkTextPage ? "text-black" : "text-white"
+            )}>
+              © 2024 MINDIGENOUS. All rights reserved.
+            </p>
+          </div>
+          <nav className="flex space-x-6">
+            <Link 
+              to="/privacy" 
+              className={cn("text-sm opacity-70 hover:opacity-100 transition-opacity",
+                isDarkTextPage ? "text-black" : "text-white"
+              )}
+            >
+              Privacy Policy
+            </Link>
+            <Link 
+              to="/terms" 
+              className={cn("text-sm opacity-70 hover:opacity-100 transition-opacity",
+                isDarkTextPage ? "text-black" : "text-white"
+              )}
+            >
+              Terms of Service
+            </Link>
+          </nav>
         </div>
       </div>
     </footer>

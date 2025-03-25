@@ -40,7 +40,7 @@ const About = () => {
       <section className="relative py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-            About Mindigenous
+            About <span className="font-briller">MINDIGENOUS</span>
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
             We're on a mission to revolutionize mental wellness through AI-powered support and community connection.
@@ -68,7 +68,7 @@ const About = () => {
             </h2>
             <div className="prose dark:prose-invert max-w-none">
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                Mindigenous was born from a simple yet powerful idea: everyone deserves access to quality mental wellness support. We recognized that traditional mental health resources weren't always accessible or personalized enough to meet individual needs.
+                <span className="font-briller">MINDIGENOUS</span> was born from a simple yet powerful idea: everyone deserves access to quality mental wellness support. We recognized that traditional mental health resources weren't always accessible or personalized enough to meet individual needs.
               </p>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
                 By combining cutting-edge AI technology with a deep understanding of mental wellness, we've created a platform that provides personalized support to users worldwide. Our AI companions are designed to understand, adapt, and grow with you on your journey to better mental health.
@@ -88,7 +88,7 @@ const About = () => {
             Join Us on This Journey
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-            Be part of our mission to transform mental wellness support. Start your journey with Mindigenous today.
+            Be part of our mission to transform mental wellness support. Start your journey with <span className="font-briller">MINDIGENOUS</span> today.
           </p>
           <Link to="/chat">
             <Button size="lg" className="w-full sm:w-auto">

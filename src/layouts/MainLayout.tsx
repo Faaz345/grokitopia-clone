@@ -1,7 +1,9 @@
-
+import { cn } from "@/lib/utils";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { cn } from "@/lib/utils";
+import VideoBackground from "@/components/VideoBackground";
+import BrainLogo from "@/components/BrainLogo";
+import { useLocation } from "react-router-dom";
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -9,13 +11,18 @@ interface MainLayoutProps {
 }
 
 const MainLayout = ({ children, className }: MainLayoutProps) => {
+  const location = useLocation();
+  const path = location.pathname.slice(1) || 'home';
+  const pageClass = `${path}-page`;
+
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className={cn("min-h-screen", pageClass, className)}>
       <Header />
-      <main className={cn("flex-1 pt-24 pb-8", className)}>
+      <main>
         {children}
       </main>
       <Footer />
+      <VideoBackground />
     </div>
   );
 };

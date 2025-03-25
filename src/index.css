@@ -1,4 +1,13 @@
+@import url('https://fonts.cdnfonts.com/css/biller-bold');
 @import url('https://fonts.cdnfonts.com/css/briller');
+
+@font-face {
+  font-family: 'Briller-Bold';
+  src: url('/fonts/Briller-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
@@ -45,7 +54,7 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    font-family: 'Briller', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'SF Pro Display', 'Inter', 'system-ui', 'sans-serif';
   }
 
   .dark {
@@ -96,12 +105,14 @@
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: transparent;
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Briller', 'Helvetica Neue', Arial, sans-serif;
+    @apply text-foreground;
+    background: transparent;
     overflow-x: hidden;
+    font-family: 'SF Pro Display', 'Inter', 'system-ui', 'sans-serif';
   }
 }
 
@@ -221,4 +232,91 @@ input:-webkit-autofill:focus {
 
 .gradient-text {
   background-size: 200% auto;
+}
+
+/* Video background styles */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
+}
+
+/* Hide video on Features and About pages */
+.features-page .video-background,
+.about-page .video-background {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Keep existing video styles */
+.video-background video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  opacity: 70;
+}
+
+/* AI Powered Support section styling */
+.ai-powered-support {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  background: transparent;
+}
+
+.ai-logo-container {
+  /* Styling for the logo container */
+  flex-shrink: 0;
+  position: relative;
+  top: -50px !important;
+  margin-bottom: -30px;
+  z-index: 10;
+  background: transparent;
+}
+
+.ai-text-container {
+  /* Styling for the text container */
+  text-align: center;
+  position: relative;
+  top: -15px;
+  margin-top: -10px;
+  background: transparent;
+  color: inherit;
+}
+
+.ai-logo {
+  width: 48px;
+  height: 48px;
+  display: block; /* Ensure proper display */
+  transform: translateY(-20px); /* Alternative way to move up */
+}
+
+/* Add these new styles */
+.logo-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.content-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
