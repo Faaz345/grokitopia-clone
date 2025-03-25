@@ -1,3 +1,4 @@
+
 import Chat from "@/components/Chat";
 import MainLayout from "@/layouts/MainLayout";
 
@@ -15,4 +16,4 @@ const ChatPage = () => {
   );
 };
 
-export default ChatPage; 
+export default ChatPage;
