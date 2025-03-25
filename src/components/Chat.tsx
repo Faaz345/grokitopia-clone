@@ -1,14 +1,18 @@
+
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
+import { useState } from "react";
 
 interface ChatProps {
   className?: string;
 }
 
 const Chat = ({ className }: ChatProps) => {
+  const [inputValue, setInputValue] = useState("");
+  
   return (
-    <div className={cn("flex flex-col h-[calc(100vh-180px)]", className)}>
+    <div className={cn("flex flex-col h-[calc(100vh-220px)]", className)}>
       {/* Model Selector */}
       <div className="px-4 mb-4">
         <select className="w-full bg-secondary/10 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
@@ -22,7 +26,7 @@ const Chat = ({ className }: ChatProps) => {
       <Card className="flex-1 p-4 mb-4 overflow-y-auto">
         <div className="space-y-4">
           {/* Messages Container */}
-          <div className="flex flex-col gap-3 mt-40">
+          <div className="flex flex-col gap-3">
             {/* AI Message */}
             <div className="flex items-start gap-3 max-w-[80%]">
               <div className="rounded-lg bg-secondary/10 p-4">
@@ -50,6 +54,8 @@ const Chat = ({ className }: ChatProps) => {
           <input
             type="text"
             placeholder="Type your message..."
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
             className="flex-1 bg-secondary/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-primary"
           />
           <Button size="icon">
@@ -73,4 +79,4 @@ const Chat = ({ className }: ChatProps) => {
   );
 };
 
-export default Chat; 
+export default Chat;
